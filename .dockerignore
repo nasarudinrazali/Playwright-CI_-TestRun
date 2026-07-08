@@ -1,3 +1,15 @@
+# Version control
 .git
 .gitignore
+
+# Dependencies (rebuilt fresh inside the container)
 node_modules
+
+# (don't need to copy these into themselves)
+.dockerignore
+
+# Test outputs (generated fresh on each run, don't need to be baked into image)
+test-results
+playwright-report
+allure-results
+allure-report
