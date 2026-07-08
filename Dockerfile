@@ -1,6 +1,5 @@
 # Use the same version as your installed @playwright/test package
 FROM mcr.microsoft.com/playwright:v1.61.1-jammy
-//playwright version in package,json must much with playwright version in Dockerfile
 
 WORKDIR /app
 

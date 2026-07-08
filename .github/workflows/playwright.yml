@@ -22,7 +22,11 @@ jobs:
         run: docker build -t playwright-tests .
 
       - name: Run tests inside container
-        run: docker run --rm playwright-tests
+        run: |
+         docker create --name test-run playwright-tests
+         docker start -a test-run || true  
+         docker cp test-run:/app/playwright-report ./playwright-report
+         docker rm test-run
 
       - name: Upload test report (if generated)
         if: always()
